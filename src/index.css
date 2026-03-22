@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Make all interactive controls show hand cursor */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+label,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Add extra affordance for clickable card and filter items */
+.card-clickable,
+.clickable {
+  cursor: pointer;
+}
