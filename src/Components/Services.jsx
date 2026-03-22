@@ -93,7 +93,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* LEFT: Content Side */}
-          <div className="space-y-8 text-center lg:text-left order-2 lg:order-1">
+          <div className="space-y-8 text-center lg:text-left order-1 lg:order-1">
             
             {/* Company Badge */}
             <div className="inline-flex items-center gap-3 bg-white border-2 border-sky-200 rounded-full px-6 py-3 shadow-lg">
@@ -213,7 +213,7 @@ const HeroSection = () => {
           </div>
 
           {/* RIGHT: Image Carousel Side */}
-          <div className="relative order-1 lg:order-2">
+          <div className="relative order-2 lg:order-2">
             {/* Main Image Container */}
             <div className="relative">
               

@@ -301,12 +301,12 @@ const Products = () => {
   const handleWhatsAppClick = (product) => {
     const priceText = product.price != null ? `KES ${product.price.toLocaleString()}` : 'Price on request';
     const message = `Hi! I'm interested in the *${product.name}*\n\nCategory: ${product.category}\nPrice: ${priceText}\n\nCould you provide more details?`;
-    const whatsappNumber = '254700695745';
+    const whatsappNumber = '254723494267';
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
   };
 
-  return (
+return (
 <section id="products" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-50">
   
   <div className="max-w-7xl mx-auto">
@@ -323,11 +323,50 @@ const Products = () => {
       </p>
     </div>
 
-    {/* MAIN LAYOUT */}
+    {/* MOBILE FILTER BAR */}
+    <div className="lg:hidden mb-6 space-y-3">
+
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full px-4 py-3 border rounded-lg"
+      />
+
+      <div className="flex gap-3">
+        
+        {/* Category */}
+        <select
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className="flex-1 px-4 py-3 border rounded-lg"
+        >
+          {categories.map((cat) => (
+            <option key={cat}>{cat}</option>
+          ))}
+        </select>
+
+        {/* Price */}
+        <select
+          value={priceRange}
+          onChange={(e) => setPriceRange(e.target.value)}
+          className="flex-1 px-4 py-3 border rounded-lg"
+        >
+          <option value="all">All</option>
+          <option value="low">Under 5K</option>
+          <option value="medium">5K - 15K</option>
+          <option value="high">15K+</option>
+        </select>
+      </div>
+    </div>
+
+    {/* DESKTOP LAYOUT */}
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       
-      {/* ================= FILTER SIDEBAR ================= */}
-      <div className="lg:col-span-1 bg-white p-6 rounded-2xl shadow-md border h-fit sticky top-24">
+      {/* SIDEBAR (DESKTOP ONLY) */}
+      <div className="hidden lg:block lg:col-span-1 bg-white p-6 rounded-2xl shadow-md border h-fit sticky top-24">
         
         <h3 className="text-xl font-bold mb-6">Filters</h3>
 
@@ -338,29 +377,31 @@ const Products = () => {
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-3 border rounded-lg focus:border-blue-500 outline-none"
+            className="w-full px-4 py-3 border rounded-lg"
           />
         </div>
 
-        {/* CATEGORY CHECKBOX */}
+        {/* Categories */}
         <div className="mb-6">
           <h4 className="font-semibold mb-3">Categories</h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto">
+          <div className="space-y-2">
             {categories.map((cat) => (
-              <label key={cat} className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={selectedCategory === cat}
-                  onChange={() => setSelectedCategory(cat)}
-                  className="accent-blue-600"
-                />
-                <span className="text-sm text-gray-700">{cat}</span>
-              </label>
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`block w-full text-left px-3 py-2 rounded-lg ${
+                  selectedCategory === cat 
+                    ? 'bg-blue-600 text-white' 
+                    : 'hover:bg-gray-100'
+                }`}
+              >
+                {cat}
+              </button>
             ))}
           </div>
         </div>
 
-        {/* PRICE FILTER */}
+        {/* Price */}
         <div className="mb-6">
           <h4 className="font-semibold mb-3">Price</h4>
           <select
@@ -375,7 +416,7 @@ const Products = () => {
           </select>
         </div>
 
-        {/* CLEAR FILTERS */}
+        {/* Clear */}
         <button
           onClick={() => {
             setSearchTerm("");
@@ -388,10 +429,10 @@ const Products = () => {
         </button>
       </div>
 
-      {/* ================= PRODUCTS ================= */}
+      {/* PRODUCTS */}
       <div className="lg:col-span-3">
         
-        {/* Top Bar */}
+        {/* Top bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
           
           <p className="text-gray-600">
@@ -401,7 +442,7 @@ const Products = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-4 py-2 border rounded-lg"
+            className="px-4 py-2 border rounded-lg w-full sm:w-auto"
           >
             <option value="name">Sort by Name</option>
             <option value="price-low">Price: Low → High</option>
@@ -409,13 +450,13 @@ const Products = () => {
           </select>
         </div>
 
-        {/* PRODUCTS GRID */}
+        {/* GRID */}
         {filteredAndSortedProducts.length === 0 ? (
           <div className="text-center py-20">
             <h3 className="text-xl text-gray-400">No products found</h3>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAndSortedProducts.map((product) => (
               <div
                 key={product.id}
@@ -423,7 +464,7 @@ const Products = () => {
               >
                 
                 {/* IMAGE */}
-                <div className="h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl overflow-hidden">
+                <div className="h-48 bg-gray-100 overflow-hidden rounded-t-2xl">
                   <img
                     src={product.icon}
                     alt={product.name}
@@ -442,17 +483,15 @@ const Products = () => {
                     {product.description}
                   </p>
 
-                  {/* BUTTON */}
                   <button
                     onClick={() => handleWhatsAppClick(product)}
                     className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
-    
                   >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                  alt="WhatsApp"
-                  className="w-5 h-5"
-                />
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                      alt="WhatsApp"
+                      className="w-5 h-5"
+                    />
                     Order via WhatsApp
                   </button>
                 </div>
@@ -466,7 +505,7 @@ const Products = () => {
     </div>
   </div>
 </section>
-  );
+);
 };
 
 export default Products;
