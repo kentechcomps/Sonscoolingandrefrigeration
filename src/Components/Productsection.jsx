@@ -19,7 +19,7 @@ import refrigratorgauge from '../assets/refrigrator gauge.jpeg';
 import selfignition from '../assets/selfignition.jpg';
 import chargingvalve from '../assets/chargingvalve.jpg';
 import copperrods from '../assets/copperrods.avif';
-import copperpipes from '../assets/copperpipes.jpg';
+import copperpipes from '../assets/copperpipes.jpeg';
 import labgastap from '../assets/labgastap.jpg'
 import pressurevalve from '../assets/pressurevalve.webp';
 import compressoroil from '../assets/compressoroil.jpg';
@@ -468,7 +468,7 @@ return (
                   <img
                     src={product.icon}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain object-center"
                   />
                 </div>
 

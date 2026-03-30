@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, Play, CheckCircle2 } from 'lucide-react';
 import pol from '../assets/89.jpeg';
-import coldroom from '../assets/front.webp';
-import freeze from '../assets/bitzer.webp';
+import coldroom from '../assets/posh.jpeg';
+import freeze from '../assets/26.jpeg';
 import chillers from '../assets/89.jpeg';
 
 
