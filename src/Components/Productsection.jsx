@@ -455,7 +455,7 @@ return (
           <div className="text-center py-20">
             <h3 className="text-xl text-gray-400">No products found</h3>
           </div>
-        ) : (
+        ) : (      
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAndSortedProducts.map((product) => (
               <div

@@ -4,27 +4,82 @@ import pol from '../assets/89.jpeg';
 import coldroom from '../assets/posh.jpeg';
 import freeze from '../assets/26.jpeg';
 import chillers from '../assets/89.jpeg';
-
+import meat from '../assets/meat.jpeg';
+import fruit from '../assets/fruits.jpeg';
+import machine from '../assets/machine.jpeg';
+import outdoor from '../assets/outdoor.jpeg';
+import coldrooms from '../assets/coldrooms.jpeg';
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const slides = [
-        {
+    {
+      id: 7,
+      image: outdoor,
+      title: "Outdoor Cooling Solutions",
+      subtitle: "Weather-Resistant Installations",
+      description: "Outdoor-rated cooling and refrigeration units built to withstand harsh environments.",
+      features: ["Weatherproof", "Corrosion Resistant", "Easy Maintenance"]
+    },
+    {
+      id: 6,
+      image: machine,
+      title: "Industrial Machinery Cooling",
+      subtitle: "Robust Equipment Cooling",
+      description: "Cooling systems designed to protect heavy machinery and maintain optimal operating temperatures.",
+      features: ["Durable", "High Capacity", "Low Vibration"]
+    },
+    {
       id: 1,
       image: freeze,
       title: "Freezer & Blast Rooms",
       subtitle: "Rapid Cooling Technology",
-      description: "High-performance freezer rooms for long-term preservation and blast freezing capabilities for industrial needs.",
+      description: "High-performance freezer rooms for long-term preservation and blast freezing capabilities.",
       features: ["Rapid Cooling", "Heavy Duty", "Low Maintenance"]
-    } ,
+    },
+     
+    
+     {
+      id: 4,
+      image: meat,
+      title: "Meat Processing Rooms",
+      subtitle: "Hygienic & Reliable",
+      description: "Temperature-controlled solutions optimized for meat processing and storage.",
+      features: ["Hygienic", "Precise Control", "Easy Cleaning"]
+    },
+    {
+      id: 5,
+      image: fruit,
+      title: "Fruit & Produce Storage",
+      subtitle: "Freshness Preservation",
+      description: "Customized cold storage for fruits and produce to extend shelf life and reduce waste.",
+      features: ["Humidity Control", "Gentle Cooling", "Energy Saving"]
+    },
+   
+    {
+      id: 8,
+      image: coldrooms,
+      title: "Multi-Room Cold Storage",
+      subtitle: "Scalable & Modular",
+      description: "Modular coldroom systems for facilities that need multiple temperature zones and easy expansion.",
+      features: ["Modular", "Zone Control", "Fast Installation"]
+    },
+    {
+      id: 9,
+      image: pol,
+      title: "Commercial Panels",
+      subtitle: "Insulated Panel Solutions",
+      description: "High-performance insulated panels for walls and ceilings in cold storage applications.",
+      features: ["High Insulation", "Quick Fit", "Long Lasting"]
+    },
     {
       id: 2,
       image: chillers,
       title: "Premium Cooling Systems",
       subtitle: "Industrial & Commercial Solutions",
-      description: "State-of-the-art chiller installations for businesses that demand precision temperature control and energy efficiency.",
+      description: "State-of-the-art chiller installations for precision temperature control and energy efficiency.",
       features: ["Energy Efficient", "ISO Certified", "24/7 Support"]
     },
     {
@@ -32,9 +87,10 @@ const HeroSection = () => {
       image: coldroom,
       title: "Cold Room Specialists",
       subtitle: "Custom Temperature Control",
-      description: "Expertly designed cold rooms for food storage, pharmaceuticals, and commercial applications with guaranteed reliability.",
+      description: "Expertly designed cold rooms for food storage, pharmaceuticals, and commercial applications.",
       features: ["Custom Design", "Quick Installation", "Warranty Included"]
     }
+   
   ];
 
   // Auto-advance carousel

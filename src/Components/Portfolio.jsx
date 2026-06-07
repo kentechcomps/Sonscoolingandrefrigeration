@@ -79,6 +79,14 @@ const Portfolio = () => {
       image: KIGUMOFUNERALHOME,
       description: 'Specialized mortuary cold room system',
       location: 'Murang’a'
+    } ,
+     {
+      id: 'PR-009',
+      title: 'Fu',
+      category: 'Cold Rooms',
+      image: KIGUMOFUNERALHOME,
+      description: 'Specialized mortuary cold room system',
+      location: 'Murang’a'
     }
   ];
 
