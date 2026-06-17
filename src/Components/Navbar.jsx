@@ -4,6 +4,9 @@ import { Menu, X, Snowflake, Wind, Mail, Phone } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +15,15 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("Login attempt:", { username, password });
+    // Add your login logic here
+    setUsername("");
+    setPassword("");
+    setIsLoginModalOpen(false);
+  };
 
   return (
     <>
@@ -27,7 +39,7 @@ const Navbar = () => {
               
               <a href="mailto:info@sonscooling.co.ke" className="flex items-center gap-2 hover:text-blue-600 transition">
                 <Mail size={16} />
-                <span>sonscoolingservices@gmail.com</span>
+                <span>sonscooling2026@gmail.com</span>
               </a>
 
               <a href="tel:+254700695745" className="flex items-center gap-2 hover:text-blue-600 transition">
@@ -90,6 +102,7 @@ const Navbar = () => {
                     { name: "Products", href: "#products" },
                     { name: "Portfolio", href: "#portfolio" },
                     { name: "Contact", href: "#contact" },
+                    {name: "Blog", href: "#blog"}
                   ].map((item) => (
                     <li key={item.name}>
                       <a
@@ -116,6 +129,14 @@ const Navbar = () => {
                   />
                   WhatsApp Quote
                 </a>
+
+                {/* LOGIN BUTTON */}
+                <button
+                  onClick={() => setIsLoginModalOpen(true)}
+                  className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white rounded-full font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
+                >
+                  Login
+                </button>
               </div>
 
               {/* MOBILE MENU BUTTON */}
@@ -136,6 +157,7 @@ const Navbar = () => {
                   { name: "Products", href: "#products" },
                   { name: "Portfolio", href: "#portfolio" },
                   { name: "Contact", href: "#contact" },
+                  {name: "Blog", href: "#blog"}
                 ].map((item) => (
                   <a
                     key={item.name}
@@ -159,6 +181,14 @@ const Navbar = () => {
                   />
                   Chat on WhatsApp
                 </a>
+
+                {/* MOBILE LOGIN */}
+                <button
+                  onClick={() => setIsLoginModalOpen(true)}
+                  className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-slate-900 text-white rounded-full font-bold mt-3 hover:bg-slate-800 transition-colors"
+                >
+                  Login
+                </button>
               </div>
             )}
           </div>
@@ -167,6 +197,70 @@ const Navbar = () => {
 
       {/* IMPORTANT: PUSH PAGE DOWN */}
       <div className="h-[110px] sm:h-[120px]" />
+
+      {/* LOGIN MODAL */}
+      {isLoginModalOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Login</h2>
+            
+            <form onSubmit={handleLogin} className="space-y-4">
+              {/* USERNAME INPUT */}
+              <div>
+                <label htmlFor="username" className="block text-sm font-semibold text-slate-700 mb-2">
+                  Username
+                </label>
+                <input
+                  id="username"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Enter your username"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                  required
+                />
+              </div>
+
+              {/* PASSWORD INPUT */}
+              <div>
+                <label htmlFor="password" className="block text-sm font-semibold text-slate-700 mb-2">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                  required
+                />
+              </div>
+
+              {/* BUTTONS */}
+              <div className="flex gap-3 pt-4">
+                <button
+                  type="submit"
+                  className="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg font-semibold hover:bg-sky-700 transition-colors"
+                >
+                  Login
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsLoginModalOpen(false);
+                    setUsername("");
+                    setPassword("");
+                  }}
+                  className="flex-1 px-4 py-2 bg-gray-200 text-slate-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };
