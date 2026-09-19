@@ -18,11 +18,11 @@ const Portfolio = () => {
   const projects = [
     {
       id: 'PR-001',
-      title: 'Industrial Cold Room Installation',
+      title: 'ASUMBI Industrial Cold Room Installation',
       category: 'Cold Rooms',
       image: asumbi3,
       description: 'Large-scale cold room for Asumbi exports',
-      location: 'Nairobi, Kenya'
+      location: 'BYYPASS Nairobi, Kenya'
     },
     {
       id: 'PR-002',
@@ -38,35 +38,19 @@ const Portfolio = () => {
       category: 'Cold Rooms',
       image: coldroom,
       description: 'Multi-chamber cold storage for fine dining establishment',
-      location: 'Westlands, Nairobi'
-    },
+      
+    } ,
     {
       id: 'PR-004',
       title: 'Export Pack House',
       category: 'Pack House',
       image: projectK3,
       description: 'Advanced cooling for horticultural exports',
-      location: 'Kiambu County'
-    },
-    {
-      id: 'PR-005',
-      title: 'Hotel Freezer Room',
-      category: 'Cold Rooms',
-      image: cold4,
-      description: 'Walk-in freezer for hotel kitchen',
-      location: 'Karen, Nairobi'
-    },
-    {
-      id: 'PR-006',
-      title: 'Flower Pack House',
-      category: 'Pack House',
-      image: Projectk5,
-      description: 'Temperature-controlled packing facility for flowers',
-      location: 'Naivasha'
+      location: 'Garrissa County'
     },
     {
       id: 'PR-007',
-      title: 'SUPERMARKET AC Installation',
+      title: 'TARGET SUPERMARKET AC Installation',
       category: 'Air Conditioning',
       image: gridview,
       description: 'AC installation for 19 Coins Restaurant',
@@ -79,15 +63,7 @@ const Portfolio = () => {
       image: KIGUMOFUNERALHOME,
       description: 'Specialized mortuary cold room system',
       location: 'Matuu'
-    } ,
-     {
-      id: 'PR-009',
-      title: 'Fu',
-      category: 'Cold Rooms',
-      image: KIGUMOFUNERALHOME,
-      description: 'Specialized mortuary cold room system',
-      location: 'Murang’a'
-    }
+    } 
   ];
 
   // ✅ CLEAN FILTERS
