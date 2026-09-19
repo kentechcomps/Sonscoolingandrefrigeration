@@ -46,7 +46,6 @@ const Portfolio = () => {
       category: 'Pack House',
       image: projectK3,
       description: 'Advanced cooling for horticultural exports',
-      location: 'Garrissa County'
     },
     {
       id: 'PR-007',

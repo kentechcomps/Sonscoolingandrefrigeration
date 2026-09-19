@@ -48,7 +48,7 @@ const Navbar = () => {
                   className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm hover:text-sky-600 transition"
                 >
                   <Phone size={16} />
-                  <span>+254 723 494 267</span>
+                  <span>+254700695745</span>
                 </a>
                 <a
                   href="tel:+254705825743"
