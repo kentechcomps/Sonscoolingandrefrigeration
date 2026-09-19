@@ -31,29 +31,38 @@ const Navbar = () => {
       <div className="fixed top-0 w-full z-50">
 
         {/* ================= TOP BAR ================= */}
-        <div className="bg-white border-b border-gray-200">
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-2 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm">
-            
-            {/* LEFT */}
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-gray-600">
-              
-              <a href="mailto:info@sonscooling.co.ke" className="flex items-center gap-2 hover:text-blue-600 transition">
+        <div className="bg-slate-50 border-b border-slate-200 mb-2">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-slate-700">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+              <a
+                href="mailto:info@sonscooling.co.ke"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm hover:text-sky-600 transition"
+              >
                 <Mail size={16} />
                 <span>sonscooling2026@gmail.com</span>
               </a>
 
-              <a href="tel:+254700695745" className="flex items-center gap-2 hover:text-blue-600 transition">
-                <Phone size={16} />
-                <span>+254 723494267, 254705825743</span>
-              </a>
-
+              <div className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                <a
+                  href="tel:+254723494267"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm hover:text-sky-600 transition"
+                >
+                  <Phone size={16} />
+                  <span>+254 723 494 267</span>
+                </a>
+                <a
+                  href="tel:+254705825743"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm hover:text-sky-600 transition"
+                >
+                  <Phone size={16} />
+                  <span>+254 705 825 743</span>
+                </a>
+              </div>
             </div>
 
-            {/* RIGHT */}
-            <div className="text-gray-500 text-xs font-medium">
+            <div className="text-slate-500 text-[11px] font-semibold uppercase tracking-[0.18em] text-center sm:text-right">
               Reliable Cooling Experts in Kenya
             </div>
-
           </div>
         </div>
 

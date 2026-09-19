@@ -66,19 +66,19 @@ const Portfolio = () => {
     },
     {
       id: 'PR-007',
-      title: 'Restaurant AC Installation',
+      title: 'SUPERMARKET AC Installation',
       category: 'Air Conditioning',
       image: gridview,
       description: 'AC installation for 19 Coins Restaurant',
-      location: 'Isiolo'
+      location: 'Target Supermarket MWINGI'
     },
     {
       id: 'PR-008',
-      title: 'Funeral Home Cold Room',
+      title: 'Mbaku Funeral Home',
       category: 'Cold Rooms',
       image: KIGUMOFUNERALHOME,
       description: 'Specialized mortuary cold room system',
-      location: 'Murang’a'
+      location: 'Matuu'
     } ,
      {
       id: 'PR-009',
