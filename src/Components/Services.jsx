@@ -246,7 +246,7 @@ const HeroSection = () => {
               >
                 <span className="flex items-center gap-2 justify-center">
                   <Phone size={20} />
-                  +254 723 494 267
+                  +254700695745
                 </span>
               </a>
             </div>
